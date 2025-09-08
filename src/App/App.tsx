@@ -1,12 +1,21 @@
-// Direct import for immediate rendering - no lazy loading delay
-import { ToolCanvasV2 } from '../components/ToolCanvasV2';
+import { ToolCanvasV2ReactFlow } from '../components/ToolCanvasV2/ToolCanvasV2ReactFlow';
+import React from 'react';
 
-function App() {
+function App(): React.JSX.Element {
   return (
-    <div className="App">
-      <ToolCanvasV2 />
+    <div className="w-full h-screen overflow-hidden" role='application'>
+      {/* ARIA live region for screen reader announcements */}
+      <div
+        id='live-region'
+        aria-live='polite'
+        aria-atomic='true'
+        className='sr-only'
+        aria-label='Status updates'
+      />
+
+      <ToolCanvasV2ReactFlow />
     </div>
   );
 }
 
-export default App; 
+export default App;

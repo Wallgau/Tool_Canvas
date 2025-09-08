@@ -6,7 +6,7 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "types": ["vitest/globals", "@types/react", "@types/react-dom"],
+    "types": ["vitest/globals", "@types/react", "@types/react-dom", "node"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -24,5 +24,25 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/types/jsx.d.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/types/jsx.d.ts",
+    "src/types/css-modules.d.ts",
+    "src/vite-env.d.ts"
+  ],
+  "exclude": [
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/*_backup.*",
+    "**/*_fixed.*",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/vitest.config.*",
+    "**/vite.config.*",
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "**/__tests__/**/*",
+    "**/test/**/*"
+  ]
 }
